@@ -1,0 +1,22 @@
+npm i mysql2
+npm install express@5.0.0-alpha.2 --save
+npm i dotenv
+npm i -D nodemon
+https://expressjs.com/pt-br/guide/migrating-5.html#app.router
+npm create vite@latest
+
+
+create table cadastro_usuario(
+id int not null primary key auto_increment ,
+nome varchar(20),
+sobrenome varchar(50)
+);
+
+create table pessoa_fisica(
+id int not null primary key auto_increment,
+cpf varchar(11),
+cadastro_usuario_id int
+);
+
+
+alter table pessoa_fisica add constraint foreign key (cadastro_usuario_id) references cadastro_usuario(id);
